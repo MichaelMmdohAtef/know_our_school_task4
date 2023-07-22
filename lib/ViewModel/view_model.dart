@@ -20,10 +20,10 @@ class CubitClass extends Cubit<SchoolStates>{
 
   DataModel? dataModel;
 
-  getDataFromModel()async{
+  Future getDataFromModel() async{
     await rootBundle.loadString("lib/JSONdata/SchoolData.json").then((value){
       dataModel = DataModel.fromjson(json.decode(value)[0]);
-      loadDataToUiScreen();
+      emit(GetDataFromModelState());
     });
 
   }
@@ -37,6 +37,6 @@ class CubitClass extends Cubit<SchoolStates>{
       this.teachersNo = dataModel!.numberOfTeachers!;
     }
 
-    emit(LoadingDataModel());
+    emit(LoadingDataModelState());
   }
 }

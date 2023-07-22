@@ -83,7 +83,10 @@ class SchoolInfo extends StatelessWidget {
                             minWidth: 300,
                             child: TextButton(
                               onPressed: () {
-                                cubit.getDataFromModel();
+                                cubit.getDataFromModel().then((value) {
+                                  cubit.loadDataToUiScreen();
+                                });
+
                                 //TODO Call your function to load the school data
                                 //TODO: Hint: Replace the class attributes with the data fetched from the JSON file
                               },

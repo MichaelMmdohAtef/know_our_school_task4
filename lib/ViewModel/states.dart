@@ -2,4 +2,6 @@ abstract class SchoolStates{}
 
 class InitialStates extends SchoolStates{}
 
-class LoadingDataModel extends SchoolStates{}
+class LoadingDataModelState extends SchoolStates{}
+
+class GetDataFromModelState extends SchoolStates{}
